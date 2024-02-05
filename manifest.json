@@ -1,0 +1,19 @@
+{
+  "short_name": "SimCartell",
+  "name": "Web App Simcartell",
+  "icons": [
+    {
+      "src": "/assets/logo.png",
+      "sizes": "208x208",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "scop": ".",
+  "oriention": "portrait-primary",
+  "dir": "ltr",
+  "lang":"en-us"
+}
