@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { usePhoto } from "../api/GetApi";
 import SampleCard from "./SampleCard";
-import { Col, Layout, Row, Space } from "antd";
-
+import { Button, Col, Layout, Row, Space } from "antd";
+import {AppstoreAddOutlined } from '@ant-design/icons';
 interface PhotoItem {
   id: number;
   title: string;
@@ -35,7 +35,6 @@ const Banner: React.FC = () => {
       try {
         const response = await usePhoto();
         setList(response);
-        console.log(response);
       } catch (error) {
         console.log(error);
       }
@@ -45,9 +44,14 @@ const Banner: React.FC = () => {
   }, []);
 
   return (
-    <Layout>
+    <div>
+      <Button id='AddHome'>
+      <AppstoreAddOutlined />Add to Home Screen
+      </Button>
+    
+      <hr/>
       <SwiperComponent items={list} />
-    </Layout>
+    </div>
   );
 };
 

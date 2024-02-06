@@ -6,39 +6,28 @@ import {
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Menu } from "antd";
-
 const items: MenuProps["items"] = [
   {
-    label: "Navigation One",
+    label: "Notiication",
     key: "mail",
     icon: <MailOutlined />,
   },
   {
-    label: "Navigation Two",
-    key: "app",
+    label: "Product",
+    key: "Product",
     icon: <AppstoreOutlined />,
     disabled: true,
   },
   {
-    label: "Navigation Three - Submenu",
+    label: "Home",
     key: "SubMenu",
     icon: <SettingOutlined />,
-  },
-  {
-    label: (
-      <a href="#" target="_self" rel="noopener noreferrer">
-        Navigation Four - Link
-      </a>
-    ),
-    key: "alipay",
   },
 ];
 
 const HeaderPg: React.FC = () => {
   const [current, setCurrent] = useState("mail");
-
   const onClick: MenuProps["onClick"] = (e) => {
-    console.log("click ", e);
     setCurrent(e.key);
   };
 

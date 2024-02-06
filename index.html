@@ -34,5 +34,18 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if('serviceWorker' in navigator){
+        navigator.serviceWorker.register('/Sw.js',{scope:'/'})
+        .then(function(registeration){
+          console.log('Sw Registrered')
+          
+        });
+        navigator.serviceWorker.ready.then(function(registeration){
+          console.log('Sw Ready')
+          
+        })
+      }
+    </script>
   </body>
 </html>

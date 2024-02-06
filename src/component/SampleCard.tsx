@@ -14,8 +14,7 @@ interface CardItem {
 const SampleCard: React.FC<CardItem> = (props) => {
   const factor = new Factor(123, "Widget", 456);
   const handler = () => {
-    console.log(factor.displayFactor());
-    console.log(identity("1402/11/11", "11:58"));
+    console.log("1402/11/11", "11:58");
   };
 
   return (

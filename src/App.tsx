@@ -4,6 +4,29 @@ import Banner from "./component/Banner";
 import { ConfigProvider } from "antd";
 
 function App() {
+  var IconAdd = document.getElementById("AddHome");
+  var defredprompt: any;
+
+  IconAdd?.addEventListener("click", function () {
+    if (defredprompt) {
+      defredprompt.prompt();
+      defredprompt.userChoice.then(function (choice: any) {
+        if (choice.outcome === "dismissed") {
+          console.log("Cancel install PWA");
+        } else {
+          console.log("PWA installed");
+        }
+      });
+      defredprompt = null;
+    }
+  });
+
+  window.addEventListener("beforeinstallprompt", function (event) {
+    event.preventDefault();
+    defredprompt = event;
+    return false;
+  });
+
   return (
     <ConfigProvider
       theme={{
@@ -13,7 +36,7 @@ function App() {
           colorSuccess: "#3da30b",
           sizeStep: 4,
           colorLink: "#0752bf",
-        }
+        },
       }}
     >
       <BrowserRouter>

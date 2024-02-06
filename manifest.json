@@ -3,11 +3,17 @@
   "name": "Web App Simcartell",
   "icons": [
     {
-      "src": "/assets/logo.png",
+      "src": "assets/logo.png",
       "sizes": "208x208",
       "type": "image/png"
     }
   ],
+ "related_applications": [
+   {
+     "platform": "webapp",
+     "url": "http://localhost:5173/manifest.json"
+   }
+],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
@@ -15,5 +21,5 @@
   "scop": ".",
   "oriention": "portrait-primary",
   "dir": "ltr",
-  "lang":"en-us"
+  "lang": "en-us"
 }
